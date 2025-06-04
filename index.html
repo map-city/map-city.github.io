@@ -25,9 +25,25 @@
     }
 
     header {
-      background: #222;
+      background: url('img/banner2.png') center/cover no-repeat;
       color: #fff;
       text-align: center;
+      position: relative;
+      z-index: 1;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
     }
 
     header h1 {
@@ -51,15 +67,16 @@
 
     .projects {
       display: flex;
+      flex-direction: column;
       gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
+      align-items: center;
     }
 
     .project {
       background: #fff;
       border: 1px solid #ddd;
-      flex: 1 1 300px;
+      width: 100%;
+      max-width: 1000px;
       position: relative;
     }
 
@@ -86,17 +103,25 @@
     }
 
     .person {
-      flex: 1 1 300px;
+      flex: 1 1 400px;
       background: #fff;
       border: 1px solid #ddd;
       padding: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     .person img {
       width: 100px;
+      height: 100px;
       border-radius: 50%;
-      margin-bottom: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .person-info {
+      flex: 1;
     }
 
     .contact {
@@ -125,16 +150,16 @@
     <h2 style="text-align:center; margin-bottom:20px;">Our Work</h2>
     <div class="projects">
       <div class="project">
-        <img src="screenshot1.jpg" alt="Project 1">
-        <div class="caption">Map for Local Festival</div>
+        <img src="img/ttw.png" alt="Toronto Tech Week 2025">
+        <div class="caption">Toronto Tech Week 2025</div>
       </div>
       <div class="project">
-        <img src="screenshot2.jpg" alt="Project 2">
-        <div class="caption">Interactive Hiking Trails</div>
+        <img src="img/maptoons.png" alt="Maptoons">
+        <div class="caption">Maptoons</div>
       </div>
       <div class="project">
-        <img src="screenshot3.jpg" alt="Project 3">
-        <div class="caption">City Zoning Explorer</div>
+        <img src="img/retirement.jpg" alt="Ontario Retirement">
+        <div class="caption">Ontario Retirement</div>
       </div>
     </div>
   </section>
@@ -143,14 +168,18 @@
     <h2 style="text-align:center; margin-bottom:20px;">About Us</h2>
     <div class="about">
       <div class="person">
-        <img src="headshot1.jpg" alt="Dev 1">
-        <h3>Alex Rivers</h3>
-        <p>Front-end developer specializing in UX and interactive map interfaces. Passionate about clean design and open data.</p>
+        <img src="img/headshot_sk.jpeg" alt="Steve Kim">
+        <div class="person-info">
+          <h3>Steve Kim</h3>
+          <p>Front-end developer specializing in UX and interactive map interfaces. Passionate about clean design and open data.</p>
+        </div>
       </div>
       <div class="person">
-        <img src="headshot2.jpg" alt="Dev 2">
-        <h3>Jamie Tran</h3>
-        <p>Full-stack developer focused on performant, scalable web mapping tools using open source stacks and modern JS.</p>
+        <img src="img/headshot_jf.jpeg" alt="Jamie Fletcher">
+        <div class="person-info">
+          <h3>Jamie Fletcher</h3>
+          <p>Full-stack developer focused on performant, scalable web mapping tools using open source stacks and modern JS.</p>
+        </div>
       </div>
     </div>
   </section>
