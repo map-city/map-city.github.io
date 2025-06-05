@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+body {
+    color: hsl(0, 0%, 40%);
+    background: hsl(0, 0%, 97%);
+}
+
+header,
+section {
+    max-width: 700px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta a {
+    display: inline-block;
+    background: hsl(204, 100%, 40%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta a:hover {
+    background: hsl(205, 100%, 32%);
+    color: hsl(210, 100%, 94%);
+    transition: all 0.2s ease-in-out;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.project {
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    text-align: center;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 5px;
+}
+
+.project a img {
+    width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.project a:hover img {
+    opacity: 0.75;
+}
+
+.project .caption {
+    padding-top: 10px;
+}
+
+.about {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.person {
+    flex: 1 1 300px;
+    background: hsl(0, 0%, 95%);
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.person img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.person-info {
+    flex: 1;
+}
+
+.contact {
+    text-align: center;
+    padding: 40px 20px 60px 20px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-links a {
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: -2px;
+}
+
+h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+}
