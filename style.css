@@ -101,7 +101,9 @@ header::before {
 }
 
 .project {
-    width: 100%;
+    position: relative;
+    overflow: hidden;
+    width: 50%;
     max-width: 512px;
     padding: 30px;
     text-align: center;
@@ -109,7 +111,7 @@ header::before {
     border-radius: 5px;
 }
 
-.project a img {
+.project img {
     width: 100%;
     display: block;
     margin: auto;
@@ -118,7 +120,7 @@ header::before {
     opacity: 1;
 }
 
-.project a:hover img {
+.project img:hover {
     opacity: 0.75;
 }
 
@@ -211,5 +213,9 @@ h4 {
     .step {
         max-width: 100%;
         padding: 30px;
+    }
+
+    .project {
+        width: 100%;
     }
 }
