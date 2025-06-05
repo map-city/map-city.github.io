@@ -15,7 +15,7 @@ body {
 
 header,
 section {
-    max-width: 700px;
+    max-width: 1024px;
     text-align: left;
     margin: 0 auto;
     padding: 20px 30px;
@@ -28,6 +28,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 700px;
 }
 
 header::before {
@@ -73,6 +74,7 @@ header::before {
     flex: 1;
     text-align: left;
     padding: 0;
+    max-width: 700px;
 }
 
 .icon-circle {
@@ -93,7 +95,7 @@ header::before {
 
 .projects {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     align-items: center;
 }
@@ -203,6 +205,10 @@ h4 {
 }
 
 @media (max-width: 650px) {
+    .projects {
+        flex-direction: column;
+    }
+
     .project {
         width: 100%;
     }
