@@ -28,7 +28,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 700px;
 }
 
 header::before {
@@ -181,7 +180,7 @@ header::before {
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: -1px;
 }
