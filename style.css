@@ -28,7 +28,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
 }
 
 header::before {
@@ -61,19 +60,52 @@ header::before {
     transition: all 0.2s ease-in-out;
 }
 
+.what-we-do {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    flex-direction: row;
+}
+
+.step {
+    max-width: 200px;
+    background: hsl(0, 0%, 95%);
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+
+.icon-circle {
+    width: 30px;
+    height: 30px;
+    background-color: hsl(0, 0%, 40%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.icon-circle i {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
 .projects {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
 }
 
 .project {
     width: 100%;
-    max-width: 700px;
+    max-width: 512px;
     padding: 30px;
     text-align: center;
-    background-color: hsl(0, 0%, 95%);
+    background: hsl(0, 0%, 95%);
     border-radius: 5px;
 }
 
@@ -96,7 +128,7 @@ header::before {
 
 .about {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -108,7 +140,7 @@ header::before {
     padding: 20px;
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 15px;
 }
 
 .person img {
@@ -143,24 +175,24 @@ header::before {
     font-size: 1rem;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 h1 {
     font-size: 1.8rem;
     font-weight: 300;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 
 h2 {
     font-size: 0.6rem;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 h3 {
-    font-weight: 900;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -168,4 +200,16 @@ h4 {
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 0;
+}
+
+@media (max-width: 650px) {
+    .what-we-do {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        max-width: 100%;
+        padding: 30px;
+    }
 }
