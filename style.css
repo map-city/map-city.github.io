@@ -10,7 +10,7 @@
 
 body {
     color: hsl(0, 0%, 40%);
-    background: hsl(0, 0%, 97%);
+    background: hsl(0, 0%, 96%);
 }
 
 header,
@@ -66,14 +66,16 @@ header::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
 }
 
 .step {
     flex: 1;
     text-align: left;
-    padding: 0;
+    padding: 20px;
     max-width: 700px;
+    background: linear-gradient(to bottom right, hsl(210, 20%, 96%), hsl(210, 20%, 92%));
+    border-radius: 5px;
 }
 
 .icon-circle {
@@ -106,7 +108,7 @@ header::before {
     max-width: 512px;
     padding: 30px;
     text-align: center;
-    background: hsl(0, 0%, 95%);
+    background: linear-gradient(to bottom right, hsl(210, 20%, 96%), hsl(210, 20%, 92%));
     border-radius: 5px;
 }
 
@@ -136,7 +138,7 @@ header::before {
 
 .person {
     flex: 1 1 300px;
-    background: hsl(0, 0%, 95%);
+    background: linear-gradient(to bottom right, hsl(210, 20%, 96%), hsl(210, 20%, 92%));
     border-radius: 5px;
     padding: 20px;
     display: flex;
