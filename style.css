@@ -98,7 +98,7 @@ header::before {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .project {
@@ -129,6 +129,7 @@ header::before {
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .person {
