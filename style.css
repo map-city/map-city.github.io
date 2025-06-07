@@ -30,7 +30,7 @@ header {
     text-align: center;
     margin-bottom: 30px;
     background: 
-    radial-gradient(circle at 30% 30%, hsla(200, 80%, 85%, 0.3) 0%, transparent 40%),
+    radial-gradient(circle at 30% 30%, hsla(200, 80%, 85%, 0.4) 0%, transparent 40%),
     linear-gradient(135deg, transparent 55%, hsla(340, 100%, 90%, 0.2) 85%);
   
   
