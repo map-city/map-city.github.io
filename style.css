@@ -29,6 +29,8 @@ header {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background: linear-gradient(to bottom right, hsl(192, 96%, 34%), hsl(166, 48%, 58%));
+    color: hsl(0, 0%, 100%);
 }
 
 header::before {
@@ -48,16 +50,15 @@ header::before {
 
 .cta a {
     display: inline-block;
-    background: hsl(204, 100%, 40%);
-    color: hsl(0, 0%, 100%);
+    background: hsl(27, 96%, 69%);
+    color: hsl(0, 0%, 20%);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .cta a:hover {
-    background: hsl(205, 100%, 32%);
-    color: hsl(210, 100%, 94%);
+    background: hsl(27, 96%, 59%);
     transition: all 0.2s ease-in-out;
 }
 
@@ -181,7 +182,7 @@ header::before {
 
 h1 {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 700;
     letter-spacing: -1px;
 }
 
