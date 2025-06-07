@@ -15,10 +15,9 @@ body {
 
 header,
 section {
-    max-width: 1024px;
     text-align: left;
-    margin: 0 auto;
-    padding: 30px 30px;
+    width: 100%;
+    padding: 30px;
 }
 
 header {
@@ -29,6 +28,7 @@ header {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    margin-bottom: 30px;
     background: linear-gradient(to bottom right, hsl(192, 96%, 34%), hsl(166, 48%, 58%));
     color: hsl(0, 0%, 100%);
 }
@@ -70,15 +70,27 @@ header::before {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.title {
+    width: 100%;
+    text-align: left;
 }
 
 .step {
     flex: 1;
     text-align: left;
+    width: 100%;
     padding: 20px;
-    max-width: 768px;
     background: linear-gradient(to top left, hsl(210, 20%, 96%), hsl(210, 20%, 92%));
     border-radius: 5px;
+}
+
+.step h2 {
+    max-width: 768px;
+    margin: 0 auto;
 }
 
 .icon-circle {
@@ -97,11 +109,25 @@ header::before {
     font-size: 1rem;
 }
 
+.projects-container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.projects-container h3 {
+    max-width: 768px;
+    margin: 0 auto 30px 0;
+}
+
 .projects {
     display: flex;
     flex-direction: row;
-    gap: 30px;
     align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: hsl(210, 20%, 92%);
+    border-radius: 5px;
 }
 
 .project {
@@ -109,11 +135,9 @@ header::before {
     overflow: hidden;
     width: 50%;
     max-width: 512px;
-    padding: 30px;
     margin: 0 auto;
     text-align: center;
-    background-color: hsl(210, 20%, 92%);
-    border-radius: 5px;
+
 }
 
 .project img {
@@ -161,7 +185,7 @@ header::before {
 
 .contact {
     text-align: center;
-    padding: 40px 20px 80px 20px;
+    padding: 40px 20px 100px 20px;
 }
 
 .contact-links {
@@ -197,7 +221,6 @@ h3 {
     font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 1px;
-    margin-bottom: 15px;
 }
 
 h4 {
