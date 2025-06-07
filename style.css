@@ -29,8 +29,10 @@ header {
     justify-content: center;
     text-align: center;
     margin-bottom: 30px;
-    background: radial-gradient(circle at 30% 30%, hsl(200, 80%, 85%) 0%, transparent 40%), linear-gradient(135deg, hsl(210, 50%, 98%) 0%, hsl(210, 30%, 92%) 100%), repeating-linear-gradient(45deg, hsla(210, 20%, 90%, 0.2) 0px, hsla(210, 20%, 90%, 0.2) 2px, transparent 2px, transparent 6px);
-    ;
+    background: 
+    radial-gradient(circle at 30% 30%, hsla(200, 80%, 85%, 0.3) 0%, transparent 40%),
+    linear-gradient(135deg, transparent 55%, hsla(50, 100%, 90%, 0.3) 85%);
+  
 }
 
 header::before {
@@ -137,7 +139,7 @@ header::before {
     max-width: 512px;
     margin: 0 auto;
     text-align: center;
-
+    overflow: visible;
 }
 
 .project img {
@@ -145,7 +147,7 @@ header::before {
     display: block;
     margin: auto;
     border-radius: 5px;
-    filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.1));
+    filter: drop-shadow(2px 2px 6px hsla(0, 0%, 0%, 0.2));
 }
 
 .project .caption {
@@ -215,7 +217,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 300;
     letter-spacing: -1px;
 }
