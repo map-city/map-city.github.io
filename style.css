@@ -51,10 +51,11 @@ header::before {
 .cta a {
     display: inline-block;
     background: hsl(27, 96%, 69%);
-    color: hsl(0, 0%, 20%);
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    font-weight: 700;
 }
 
 .cta a:hover {
