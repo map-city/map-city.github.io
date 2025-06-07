@@ -53,16 +53,16 @@ header::before {
 
 .cta a {
     display: inline-block;
-    background: hsl(27, 96%, 69%);
-    border-radius: 5px;
+    background: hsl(204, 100%, 40%);
     color: hsl(0, 0%, 100%);
-    padding: 10px 20px;
+    padding: 20px 30px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .cta a:hover {
-    background: hsl(27, 96%, 59%);
+    background: hsl(207, 100%, 32%);
     transition: all 0.2s ease-in-out;
 }
 
@@ -203,12 +203,15 @@ header::before {
 }
 
 .contact-links a {
-    color: #0077cc;
     text-decoration: none;
-    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 30px;
+}
+
+.contact-links i {
+    color: #0077cc;
+    font-size: 1.6rem;
 }
 
 h1 {
