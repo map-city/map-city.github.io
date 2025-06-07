@@ -154,10 +154,12 @@ header::before {
 
 .about {
     display: flex;
-    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch; 
+    gap: 20px;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .person {
