@@ -30,10 +30,8 @@ header {
     text-align: center;
     margin-bottom: 30px;
     background: 
-    radial-gradient(circle at 30% 30%, hsla(200, 80%, 85%, 0.4) 0%, transparent 40%),
-    linear-gradient(135deg, transparent 55%, hsla(340, 100%, 90%, 0.2) 85%);
-  
-  
+    radial-gradient(circle at 30% 30%, hsla(200, 80%, 85%, 0.5) 0%, transparent 40%),
+    linear-gradient(135deg, transparent 55%, hsla(340, 100%, 90%, 0.3) 85%);
 }
 
 header::before {
@@ -58,7 +56,7 @@ header::before {
     padding: 20px 30px;
     border-radius: 10px;
     text-decoration: none;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .cta a:hover {
@@ -190,7 +188,7 @@ header::before {
 .contact {
     text-align: center;
     padding: 40px 20px 100px 20px;
-    background: linear-gradient(to bottom right, hsl(192, 10%, 94%), hsl(166, 20%, 98%));
+    background: hsl(192, 10%, 94%);
 }
 
 .contact-links {
