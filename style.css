@@ -49,14 +49,14 @@ body {
 
 .hero {
     position: relative;
-    height: 50vh;
+    height: 35vh;
     overflow: hidden;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    color: white;
+    color: rgba(251, 191, 36, 1);
 }
 
 .hero-animation {
@@ -159,24 +159,31 @@ background:
    ============================ */
 
 .hero-content {
-    position: absolute;
-
-    right: 5%;
-    bottom: 5%;
-
+    position: relative;
     z-index: 2;
-
-    text-align: right;
-
-    color: white;
+    text-align: center;
+    max-width: 700px;
+    padding: 1rem;
+    /* background-color: rgba(0,0,0,0.65); */
 }
 
 .hero-content * {
     margin-bottom: 0;
 }
 
-.hero h5 {
-    font-weight: 300;
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 /* CONTENT LAYOUT */
