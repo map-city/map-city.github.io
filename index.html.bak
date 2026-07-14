@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>We Make Maps</title>
+</head>
+
+<body>
+
+  <header> 
+    <div id="map-container">
+      <div id="map"></div>
+      <div id="map-toggle"><i class="fas fa-up-right-and-down-left-from-center"></i></div>
+    </div> 
+    <h1>We make custom web maps tailored to your brand and data.</h1>
+    <div class="cta">
+      <a href="https://calendar.app.google/EDbffmzozm7De77N6" target="_blank">Schedule a Call</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="what-we-do">
+      <h3 class="title">WHAT WE DO</h3>
+      <div class="step">
+        <div class="icon-circle">
+          <i class="fas fa-1"></i>
+        </div>
+        <h2>Design a base map that works seamlessly across your website.</h2>
+      </div>
+      <div class="step">
+        <div class="icon-circle">
+          <i class="fas fa-2"></i>
+        </div>
+        <h2>Convert location & event data into information-rich map layers.</h2>
+      </div>
+      <div class="step">
+        <div class="icon-circle">
+          <i class="fas fa-3"></i>
+        </div>
+        <h2>Build and customize with the latest open source tools.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="projects-container">
+      <h3 class="title">OUR WORK</h3>
+      <div class="projects">
+        <div class="project">
+          <a href="https://torontotechweek.github.io" target="_blank">
+            <img src="img/ttw.png" alt="Toronto Tech Week 2025">
+          </a>
+          <div class="caption">Toronto Tech Week 2025</div>
+        </div>
+        <div class="project">
+          <a href="https://maptoons.github.io/#15.53/40.764938/-73.523384/0/40" target="_blank">
+            <img src="img/maptoons.png" alt="Maptoons">
+          </a>
+          <div class="caption">MapToons</div>
+        </div>
+        <div class="project">
+          <a href="https://jamiefletcher.github.io/ontario-retirement" target="_blank">
+            <img src="img/retirement.png" alt="Ontario Retirement">
+          </a>
+          <div class="caption">Ontario Retirement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="about">
+      <h3 class="title">ABOUT</h3>
+      <div class="person">
+        <img src="img/headshot_sk.jpeg" alt="Steve Kim">
+        <div class="person-info">
+          <h4>Steve Kim</h4>
+          <p>Front-end developer specializing in UI and interactive maps.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="img/headshot_jf.jpeg" alt="Jamie Fletcher">
+        <div class="person-info">
+          <h4>Jamie Fletcher</h4>
+          <p>Full-stack developer making performant, scalable mapping tools for the web.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact-links">
+      <a href="mailto:emailstevekim@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://x.com/newgeographer2" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/steve-kim-38a38b295/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/geographyclub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </section>
+
+	<script>
+
+		const locationFile = 'data/directory/downtownwest.geojson';
+		const featureIds = ['concat', ['get', 'name'], '|'];
+		const minZoom = 15;
+		const maxZoom = 18;
+		let locationData;
+		let currentPopup = null;
+
+		var map = new maplibregl.Map({
+			container: 'map',
+			style: 'map-city.json',
+			center: [-79.39253, 43.64397],
+			pixelRatio: 1,
+			zoom: 16,
+			minZoom: minZoom,
+			maxZoom: maxZoom,
+			bearing: -16,
+			pitch: 20,
+			hash: true
+		});
+
+		const mapDiv = document.getElementById('map');
+		const toggleButton = document.getElementById('map-toggle');
+		const icon = toggleButton.querySelector('i');
+
+		let isInset = false; // map starts full screen
+
+		// Set initial icon to "collapse" since map is full screen initially
+		icon.className = 'fas fa-down-left-and-up-right-to-center';
+
+		toggleButton.addEventListener('click', () => {
+			const center = map.getCenter();
+			const zoom = map.getZoom();
+
+			isInset = !isInset;
+			mapDiv.classList.toggle('inset', isInset);
+
+			// Swap icon to show the action on click:
+			// inset: show expand icon (to go full screen)
+			// full screen: show collapse icon (to go inset)
+			icon.className = isInset
+				? 'fas fa-up-right-and-down-left-from-center'
+				: 'fas fa-down-left-and-up-right-to-center';
+
+			setTimeout(() => {
+				map.resize();
+				map.easeTo({
+					center,
+					//zoom: isInset ? 17 : zoom,
+					duration: 100
+				});
+			}, 100); // match CSS transition duration
+
+		});
+
+	</script>
+
+</body>
+
+</html>

@@ -2,114 +2,159 @@
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <meta charset="UTF-8" />
-  <script src="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.js"></script>
-  <link href="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map-city</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="style.css">
-  <title>We Make Maps</title>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 </head>
 
 <body>
 
-  <header>
-    <h1>We make custom web maps tailored to your brand and data.</h1>
-    <div class="cta">
-      <a href="https://calendar.app.google/EDbffmzozm7De77N6" target="_blank">Schedule a Call</a>
-    </div>
+  <nav class="navbar">
+    <div class="logo">LOGO</div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h5>Environment<br>& Natural Resources</h5>
+    <h1>Specialists</h1>
   </header>
 
-  <section>
-    <div class="what-we-do">
-      <h3 class="title">WHAT WE DO</h3>
-      <div class="step">
-        <div class="icon-circle">
-          <i class="fas fa-1"></i>
-        </div>
-        <h2>Design a base map that works seamlessly across your website.</h2>
-      </div>
-      <div class="step">
-        <div class="icon-circle">
-          <i class="fas fa-2"></i>
-        </div>
-        <h2>Convert location & event data into information-rich map layers.</h2>
-      </div>
-      <div class="step">
-        <div class="icon-circle">
-          <i class="fas fa-3"></i>
-        </div>
-        <h2>Build and customize with the latest open source tools.
-        </h2>
-      </div>
-    </div>
-  </section>
+  <main class="container">
 
-  <section>
-    <div class="projects-container">
-      <h3 class="title">OUR WORK</h3>
-      <div class="projects">
-        <div class="project">
-          <a href="https://torontotechweek.github.io" target="_blank">
-            <img src="img/ttw.png" alt="Toronto Tech Week 2025">
-          </a>
-          <div class="caption">Toronto Tech Week 2025</div>
-        </div>
-        <div class="project">
-          <a href="https://maptoons.github.io/#15.53/40.764938/-73.523384/0/40" target="_blank">
-            <img src="img/maptoons.png" alt="Maptoons">
-          </a>
-          <div class="caption">MapToons</div>
-        </div>
-        <div class="project">
-          <a href="https://jamiefletcher.github.io/ontario-retirement" target="_blank">
-            <img src="img/retirement.png" alt="Ontario Retirement">
-          </a>
-          <div class="caption">Ontario Retirement</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="section full-width">
+      <!-- <img
+                class="full-width-image"
+                src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Nature Landscape"> -->
 
-  <section>
-    <div class="about">
-      <h3 class="title">ABOUT</h3>
-      <div class="person">
-        <img src="img/headshot_sk.jpeg" alt="Steve Kim">
-        <div class="person-info">
-          <h4>Steve Kim</h4>
-          <p>Front-end developer specializing in UX and interactive maps.</p>
-        </div>
+      <div class="text-content">
+        <h5>
+          Experienced, reliable software development and communications for:
+        </h5>
+        <ul>
+          <li>Weather</li>
+          <li>Climate Change</li>
+          <li>Agriculture</li>
+          <li>Wildlife</li>
+          <li>Energy</li>
+          <li>Natural Resources</li>
+          <li>Pollution</li>
+          <li>Environmental Protection</li>
+          <li>Fishing</li>
+        </ul>
       </div>
-      <div class="person">
-        <img src="img/headshot_jf.jpeg" alt="Jamie Fletcher">
-        <div class="person-info">
-          <h4>Jamie Fletcher</h4>
-          <p>Full-stack developer making performant, scalable mapping tools for the web.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact">
-    <div class="contact-links">
-      <a href="mailto:emailstevekim@gmail.com">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://x.com/newgeographer2" target="_blank">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/steve-kim-38a38b295/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/geographyclub" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </section>
+    <section class="section half-width">
+
+      <div class="tags">
+        <span class="tag environment">Environment</span>
+        <span class="tag climate">Climate</span>
+        <span class="tag gis">GIS</span>
+      </div>
+
+      <div class="text-content">
+
+        <img class="thumbnail-image left"
+          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+          alt="Forest Landscape">
+
+        <h3>Half Width Section</h3>
+
+        <p>
+          This section takes up half the width on desktop.
+          The image floats left and the text wraps around it.
+          This creates a magazine-style layout.
+        </p>
+
+        <div class="code-section">
+          <pre><code>
+SELECT *
+FROM environmental_data
+WHERE category = 'climate'
+ORDER BY date DESC;
+    </code></pre>
+        </div>
+
+        <p>
+          Quisque rutrum. Aenean imperdiet.
+          Etiam ultricies nisi vel augue.
+          Curabitur ullamcorper ultricies nisi.
+          Nam eget dui.
+        </p>
+
+        <p>
+          Donec quam felis, ultricies nec,
+          pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section half-width">
+      <div class="text-content">
+
+        <img class="thumbnail-image right"
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+          alt="Mountain Landscape">
+
+        <h3>Right-Aligned Thumbnail</h3>
+
+        <p>
+          This section demonstrates text wrapping around a
+          right-aligned image. The paragraphs flow naturally
+          around the thumbnail.
+        </p>
+
+<div class="equation">
+\[
+\mathrm{NDVI} = \frac{\mathrm{NIR} - \mathrm{RED}}{\mathrm{NIR} + \mathrm{RED}}
+\]
+</div>
+
+        <div class="quote-section">
+          <p>
+            protecting our natural world requires understanding,
+            innovation, and collaboration.
+          </p>
+        </div>
+
+        <p>
+          Nam pretium turpis et arcu.
+          Duis arcu tortor, suscipit eget,
+          imperdiet nec, imperdiet iaculis, ipsum.
+        </p>
+
+        <p>
+          Sed aliquam ultrices mauris.
+          Integer ante arcu, accumsan a,
+          consectetuer eget, posuere ut, mauris.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body);
+});
+</script>
 
 </body>
 
