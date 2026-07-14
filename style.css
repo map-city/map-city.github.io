@@ -49,29 +49,102 @@ body {
 /* HERO */
 
 .hero {
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        ),
-        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80");
-
-    background-size: cover;
-    background-position: center;
-
+    position: relative;
     height: 50vh;
+    overflow: hidden;
 
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: left;
+    align-items: center;
+    justify-content: center;
 
-    text-align: left;
-    padding: 20px;
+    color: white;
 }
 
-.hero * {
+.hero-animation {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)
+        ),
+        #111;
+
+    padding: 1rem;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+/* code container */
+.hero-animation pre {
+    margin: 0;
+    height: 100%;
+
+    white-space: pre-wrap;
+}
+
+
+/* code text */
+#typing-area,
+#typing-area span {
+    display: block;
+
+    font-family:
+        "JetBrains Mono",
+        "Fira Code",
+        Consolas,
+        monospace;
+
+    font-size: 0.5rem;
+    line-height: 1.2;
+}
+
+
+/* fade before next example */
+#typing-area.fade {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+/* ============================
+   Highlight.js Overrides
+   ============================ */
+
+/* keep transparent background */
+.hljs {
+    background: transparent;
+    padding: 0;
+}
+
+
+/* ============================
+   Hero text stays above code
+   ============================ */
+
+.hero-content {
+    position: absolute;
+
+    right: 5%;
+    bottom: 5%;
+
+    z-index: 2;
+
+    text-align: right;
+
     color: white;
+}
+
+.hero-content * {
+    color: white;
+    margin-bottom: 0;
+}
+
+.hero h5 {
+    font-weight: 300;
 }
 
 /* CONTENT LAYOUT */
@@ -147,6 +220,7 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    margin-bottom: 5px;
 }
 
 h3 {
@@ -161,7 +235,7 @@ h4 {
 
 h5 {
     font-size: 1.25rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 h6 {

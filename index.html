@@ -9,8 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <link rel="stylesheet" href="style.css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/r.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 </head>
@@ -28,8 +32,19 @@
   </nav>
 
   <header class="hero">
-    <h5>Environment<br>& Natural Resources</h5>
-    <h1>Specialists</h1>
+
+    <div class="hero-animation">
+      <pre><code id="typing-area"></code></pre>
+    </div>
+
+    <div class="hero-content">
+      <h5>
+        Environment<br>
+        & Natural Resources
+      </h5>
+      <h1>Specialists</h1>
+    </div>
+
   </header>
 
   <main class="container">
@@ -42,7 +57,7 @@
 
       <div class="text-content">
         <h5>
-          Experienced software development and communications for:
+          Experienced software development & technical communications for:
         </h5>
         <ul>
           <li>Weather</li>
@@ -129,11 +144,311 @@
 
   </main>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body);
-});
-</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body);
+    });
+
+    // ============================
+    // Animation Settings
+    // ============================
+
+    const TYPE_SPEED = 25;      // typing speed (ms)
+    const DISPLAY_TIME = 1000;  // pause after finished
+    const FADE_TIME = 1200;     // fade duration
+
+    // ============================
+    // Code Examples
+    // ============================
+
+const examples = [
+
+{
+    language: "python",
+    code: `# NDVI vegetation analysis from satellite imagery
+
+import rasterio
+import numpy as np
+
+with rasterio.open(
+    "landsat_vegetation.tif"
+) as src:
+
+    nir = src.read(5)
+    red = src.read(4)
+
+    profile = src.profile
+
+
+ndvi = (
+    nir.astype(float) - red
+) / (
+    nir + red
+)
+
+
+ndvi = np.clip(
+    ndvi,
+    -1,
+    1
+)
+
+
+mean_ndvi = np.nanmean(
+    ndvi
+)
+
+
+print(
+    "Mean vegetation index:",
+    mean_ndvi
+)
+
+
+with rasterio.open(
+    "ndvi_output.tif",
+    "w",
+    **profile
+) as dst:
+
+    dst.write(
+        ndvi,
+        1
+    )`
+},
+
+
+{
+    language: "sql",
+    code: `-- PostGIS habitat suitability analysis
+
+SELECT
+
+    species.name,
+
+    habitat.type,
+
+    ST_Area(
+        ST_Intersection(
+            species.geom,
+            habitat.geom
+        )
+    ) AS suitable_area
+
+
+FROM
+
+    protected_species AS species
+
+
+JOIN
+
+    habitat_zones AS habitat
+
+
+ON
+
+    ST_Intersects(
+        species.geom,
+        habitat.geom
+    )
+
+
+WHERE
+
+    habitat.protection_status =
+        'priority'
+
+
+ORDER BY
+
+    suitable_area DESC;`
+},
+
+
+{
+    language: "r",
+    code: `# Climate change impact assessment
+
+library(sf)
+library(dplyr)
+library(ggplot2)
+
+
+temperature <- read.csv(
+    "climate_projection.csv"
+)
+
+
+regions <- st_read(
+    "watersheds.shp"
+)
+
+
+risk_model <- temperature %>%
+
+    group_by(
+        region
+    ) %>%
+
+    summarise(
+
+        mean_change =
+            mean(
+                temperature_delta
+            ),
+
+        extreme_events =
+            sum(
+                precipitation_events
+            )
+    )
+
+
+analysis <- regions %>%
+
+    left_join(
+        risk_model,
+        by = "region"
+    )
+
+
+ggplot(
+    analysis
+) +
+
+geom_sf(
+    aes(
+        fill = mean_change
+    )
+) +
+
+theme_minimal()`
+}
+
+];
+
+
+    // ============================
+    // Typing Engine
+    // ============================
+
+    const area = document.getElementById(
+      "typing-area"
+    );
+
+    const hero = document.querySelector(".hero");
+
+    let exampleIndex = 0;
+
+
+function typeCode(example) {
+
+    return new Promise(resolve => {
+
+        let position = 0;
+
+
+        function type() {
+
+            area.textContent =
+                example.code.substring(0, position);
+
+
+            area.className =
+                "language-" + example.language;
+
+
+            delete area.dataset.highlighted;
+
+            hljs.highlightElement(area);
+
+
+            // stop if code reaches bottom of hero
+if (area.scrollHeight >= hero.clientHeight) {
+    resolve();
+    return;
+}
+
+            position++;
+
+
+            if (position <= example.code.length) {
+
+                setTimeout(
+                    type,
+                    TYPE_SPEED
+                );
+
+            } else {
+
+                resolve();
+
+            }
+
+        }
+
+
+        type();
+
+    });
+
+}
+
+
+    // ============================
+    // Animation Loop
+    // ============================
+
+    async function runAnimation() {
+
+      while (true) {
+
+
+        area.classList.remove("fade");
+
+
+        await typeCode(
+          examples[exampleIndex]
+        );
+
+
+        await new Promise(
+          r => setTimeout(
+            r,
+            DISPLAY_TIME
+          )
+        );
+
+
+        area.classList.add("fade");
+
+
+        await new Promise(
+          r => setTimeout(
+            r,
+            FADE_TIME
+          )
+        );
+
+
+        area.textContent = "";
+
+
+        exampleIndex++;
+
+        if (exampleIndex >= examples.length) {
+          exampleIndex = 0;
+        }
+
+      }
+
+    }
+
+
+    runAnimation();
+
+  </script>
 
 </body>
 
