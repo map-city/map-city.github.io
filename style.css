@@ -85,29 +85,35 @@ body {
     height: 100%;
 
     white-space: pre-wrap;
+
+     line-height: 1;
 }
 
 
 /* code text */
-#typing-area,
-#typing-area span {
-    display: block;
-
+#typing-area {
     font-family:
         "JetBrains Mono",
         "Fira Code",
         Consolas,
         monospace;
 
-    font-size: 0.5rem;
-    line-height: 1.2;
+    font-size: 0.6rem;
+
+    white-space: pre-wrap;
+
+    transition: opacity 1.2s ease;
 }
 
+#typing-area span {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline;
+}
 
-/* fade before next example */
 #typing-area.fade {
     opacity: 0;
-    transition: opacity 1.2s ease;
 }
 
 /* ============================
