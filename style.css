@@ -27,7 +27,7 @@ body {
 
 .logo {
     font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 900;
 }
 
@@ -52,18 +52,23 @@ body {
     color: #333;
 }
 
+.menu li {
+    margin-bottom: 0;
+}
+
 /* HERO */
 
 .hero {
     position: relative;
     height: 35vh;
     overflow: hidden;
+    margin-bottom: 1rem;
 
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
 
-    color: rgba(251, 191, 36, 1);
+    color: #fbbf24;
 }
 
 .hero-animation {
@@ -119,7 +124,9 @@ background:
     text-align: right;
     max-width: 700px;
     padding: 1rem;
+
     /* background-color: rgba(0,0,0,0.65); */
+    color: #fbbf24;
 }
 
 .hero-content * {
@@ -192,14 +199,14 @@ background:
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .section {
     padding: 1rem 2rem;
-    min-height: 300px;
+    /* min-height: 300px; */
 }
 
 .full-width {
@@ -208,6 +215,22 @@ background:
 
 .half-width {
     flex: 1 1 calc(50% - 10px);
+}
+
+.bento-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+.bento {
+    flex: 1 1 calc(33.333% - 2rem);
+    border-radius: 5px;
+    background-color: #fbbf24;
+    margin: 0;
+    text-align: center;
 }
 
 /* FULL WIDTH IMAGE */
@@ -230,12 +253,12 @@ background:
 
 .thumbnail-image.left {
     float: left;
-    margin: 10px 10px 5px 0;
+    margin: 5px 15px 5px 0;
 }
 
 .thumbnail-image.right {
     float: right;
-    margin: 10px 0 5px 10px;
+    margin: 5px 0 5px 15px;
 }
 
 /* TEXT CONTENT */
@@ -274,13 +297,12 @@ h4 {
 
 h5 {
     font-size: 1.25rem;
-    margin-bottom: 15px;
+    margin-bottom: 0.5rem;
 }
 
 h6 {
     font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
 }
 
 p {
@@ -302,7 +324,7 @@ ol {
 }
 
 li {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
 }
 
 .tags {
