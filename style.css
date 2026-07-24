@@ -1,3 +1,7 @@
+:root {
+    --yellow: #fbbf24;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -322,12 +326,18 @@ p {
 ul,
 ol {
     columns: 2;
-    column-gap: 1rem;
-    margin-left: 1.5rem;
+    column-gap: 0.5rem;
+    margin-left: 0;
+    list-style: none;
 }
 
 li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+li i {
+    color: var(--yellow);
+    margin-right: 0.5rem;
 }
 
 .tags {
@@ -455,7 +465,6 @@ li {
 ul,
 ol {
     columns: 1;
-    margin-left: 1.5rem;
 }
 
 }
