@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
-  
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
@@ -18,7 +18,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/r.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/r.min.js"></script>
 
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -105,45 +105,45 @@
       </div>
     </section> -->
 
-<section class="section bento-section">
+    <!-- <section class="section bento-section">
 
-  <div class="highlight-bar"></div>
+      <div class="bento-container">
 
-  <h5 class="bento-title">Full-Service:</h5>
+        <section class="section bento">
+          <div class="text-content">
+            <h5>Linux Admin</h5>
+            <p>Install and deploy software locally or on the cloud</p>
+          </div>
+        </section>
 
-  <div class="bento-container">
+        <section class="section bento">
+          <div class="text-content">
+            <h5>Custom Tooling</h5>
+            <p>Build and customize domain software to your exact specifications</p>
+          </div>
+        </section>
 
-    <section class="section bento">
-      <div class="text-content">
-        <h5>Linux Admin</h5>
-        <p>Install and deploy software locally or on the cloud</p>
       </div>
-    </section>
 
-    <section class="section bento">
-      <div class="text-content">
-        <h5>Custom Tooling</h5>
-        <p>Build and customize domain software to your exact specifications</p>
-      </div>
-    </section>
-
-  </div>
-
-</section>
+    </section> -->
 
     <section class="section half-width">
+    
+    <div class="highlight-bar"></div>
 
       <div class="text-content">
 
-        <img class="thumbnail-image left"
-          src="img/headshot_jf.jpeg"
-          alt="Jamie">
+        <h5>
+          The Team:
+        </h5>        
 
-        <h5>Jamie Fletcher</h5>
+        <img class="thumbnail-image left" src="img/headshot_jf.jpeg" alt="Jamie">
 
         <p>
-          Jamie designs and builds custom software, automation, and infrastructure for scientific and technical applications.
-          His experience includes Go, Java, and Python development, machine learning, Linux systems administration, and cloud-native tooling.
+          <b>Jamie Fletcher</b> designs and builds custom software, automation, and infrastructure for scientific and technical
+          applications.
+          His experience includes Go, Java, and Python development, machine learning, Linux systems administration, and
+          cloud-native tooling.
         </p>
 
       </div>
@@ -152,13 +152,11 @@
     <section class="section half-width">
       <div class="text-content">
 
-        <img class="thumbnail-image right"
-          src="img/headshot_sk.jpeg"
-          alt="Steve">
+        <img class="thumbnail-image right" src="img/headshot_sk.jpeg" alt="Steve">
 
-        <h5>Steve Kim</h5>
         <p>
-          Steve specializes in geospatial data and applications. He has a background in remote sensing and GIS, with strengths in Linux scripting, R, PostgreSQL and JavaScript.
+          <b>Steve Kim</b> specializes in geospatial data and applications. He has a background in remote sensing and GIS, with
+          strengths in Linux scripting, R, PostgreSQL and JavaScript.
         </p>
 
         <!-- <div class="quote-section">
@@ -190,11 +188,11 @@
     // Code Examples
     // ============================
 
-const examples = [
+    const examples = [
 
-{
-    language: "python",
-    code: `# NDVI vegetation analysis from satellite imagery
+      {
+        language: "python",
+        code: `# NDVI vegetation analysis from satellite imagery
 
 import rasterio
 import numpy as np
@@ -214,12 +212,12 @@ print("Mean vegetation index:", mean_ndvi)
 
 with rasterio.open("ndvi_output.tif", "w", **profile) as dst:
     dst.write(ndvi, 1)`
-},
+      },
 
 
-{
-    language: "sql",
-    code: `-- PostGIS habitat suitability analysis
+      {
+        language: "sql",
+        code: `-- PostGIS habitat suitability analysis
 
 SELECT
     species.name,
@@ -242,12 +240,12 @@ ON ST_Intersects(
 WHERE habitat.protection_status = 'priority'
 
 ORDER BY suitable_area DESC;`
-},
+      },
 
 
-{
-    language: "r",
-    code: `# Climate change impact assessment
+      {
+        language: "r",
+        code: `# Climate change impact assessment
 
 library(sf)
 library(dplyr)
@@ -270,9 +268,9 @@ analysis <- regions %>%
 ggplot(analysis) +
     geom_sf(aes(fill = mean_change)) +
     theme_minimal()`
-}
+      }
 
-];
+    ];
 
 
     // ============================
@@ -288,111 +286,111 @@ ggplot(analysis) +
     let exampleIndex = 0;
 
 
-function typeCode(example) {
+    function typeCode(example) {
 
-    return new Promise(resolve => {
+      return new Promise(resolve => {
 
         let position = 0;
 
         const maxHeight =
-            document.querySelector(".hero-animation").clientHeight -
-            (2 * parseFloat(getComputedStyle(
-                document.querySelector(".hero-animation")
-            ).padding));
+          document.querySelector(".hero-animation").clientHeight -
+          (2 * parseFloat(getComputedStyle(
+            document.querySelector(".hero-animation")
+          ).padding));
 
 
-function type() {
+        function type() {
 
-    const nextPosition = position + 1;
+          const nextPosition = position + 1;
 
-    const nextCode =
-        example.code.substring(
-            0,
-            nextPosition
-        );
-
-
-    const nextHTML =
-        hljs.highlight(
-            nextCode,
-            {
-                language: example.language
-            }
-        ).value;
+          const nextCode =
+            example.code.substring(
+              0,
+              nextPosition
+            );
 
 
-    // temporarily measure next character
-    area.innerHTML = nextHTML;
-
-
-    // stop BEFORE overflow character appears
-    if (area.offsetHeight > maxHeight) {
-
-        // restore previous complete line
-        area.innerHTML =
+          const nextHTML =
             hljs.highlight(
-                example.code.substring(
-                    0,
-                    position
-                ),
-                {
-                    language: example.language
-                }
+              nextCode,
+              {
+                language: example.language
+              }
             ).value;
 
-        resolve();
-        return;
-    }
+
+          // temporarily measure next character
+          area.innerHTML = nextHTML;
 
 
-    // accept character
-    position++;
+          // stop BEFORE overflow character appears
+          if (area.offsetHeight > maxHeight) {
+
+            // restore previous complete line
+            area.innerHTML =
+              hljs.highlight(
+                example.code.substring(
+                  0,
+                  position
+                ),
+                {
+                  language: example.language
+                }
+              ).value;
+
+            resolve();
+            return;
+          }
 
 
-    if (position <= example.code.length) {
+          // accept character
+          position++;
 
-        setTimeout(
-            type,
-            TYPE_SPEED
-        );
 
-    } else {
+          if (position <= example.code.length) {
 
-        resolve();
+            setTimeout(
+              type,
+              TYPE_SPEED
+            );
 
-    }
+          } else {
 
-}
+            resolve();
+
+          }
+
+        }
 
 
         type();
 
-    });
+      });
 
-}
+    }
 
 
     // ============================
     // Animation Loop
     // ============================
 
-async function runAnimation() {
+    async function runAnimation() {
 
-    while (true) {
+      while (true) {
 
         area.classList.remove("fade");
 
         await typeCode(
-            examples[exampleIndex]
+          examples[exampleIndex]
         );
 
 
         // wait after typing finishes
         await new Promise(
-            r => setTimeout(
-                r,
-                DISPLAY_TIME
-            )
+          r => setTimeout(
+            r,
+            DISPLAY_TIME
+          )
         );
 
 
@@ -401,10 +399,10 @@ async function runAnimation() {
 
 
         await new Promise(
-            r => setTimeout(
-                r,
-                FADE_TIME
-            )
+          r => setTimeout(
+            r,
+            FADE_TIME
+          )
         );
 
 
@@ -414,13 +412,13 @@ async function runAnimation() {
         exampleIndex++;
 
         if (exampleIndex >= examples.length) {
-            exampleIndex = 0;
+          exampleIndex = 0;
         }
 
+      }
     }
-}
 
-runAnimation();
+    runAnimation();
 
   </script>
 
