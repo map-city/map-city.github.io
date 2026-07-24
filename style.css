@@ -332,7 +332,6 @@ ul,
 ol {
     columns: 2;
     column-gap: 0.5rem;
-    margin-left: 0;
     list-style: none;
 }
 
