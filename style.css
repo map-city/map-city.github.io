@@ -323,6 +323,11 @@ p {
     font-weight: 300;
 }
 
+.thick {
+    font-size: inherit;
+    font-weight: 900;
+}
+
 ul,
 ol {
     columns: 2;
